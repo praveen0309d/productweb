@@ -9,7 +9,7 @@ app = Flask(__name__)
 CORS(app)
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
-MODEL = "phi3:mini"
+MODEL = "llama3:latest"
 
 logging.basicConfig(level=logging.INFO)
 

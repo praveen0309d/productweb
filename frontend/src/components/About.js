@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Target, Lightbulb} from 'lucide-react';
+import { Target, Lightbulb, PlayCircle } from 'lucide-react';
 import video1 from "../videos/video1.mp4";
 
 const AboutFeature = ({ icon, title, text, delay, animationClass }) => {
