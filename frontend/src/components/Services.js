@@ -19,24 +19,28 @@ const Services = () => {
     const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef(null);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                if (entries[0].isIntersecting) {
-                    setIsVisible(true);
-                }
-            },
-            { threshold: 0.1 }
-        );
+useEffect(() => {
+    const currentRef = sectionRef.current;
 
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
+    const observer = new IntersectionObserver(
+        (entries) => {
+            if (entries[0].isIntersecting) {
+                setIsVisible(true);
+            }
+        },
+        { threshold: 0.1 }
+    );
+
+    if (currentRef) {
+        observer.observe(currentRef);
+    }
+
+    return () => {
+        if (currentRef) {
+            observer.unobserve(currentRef);
         }
-
-        return () => {
-            if (sectionRef.current) observer.unobserve(sectionRef.current);
-        };
-    }, []);
+    };
+}, []);
 
     return (
         <section id="services" className="services" ref={sectionRef}>
