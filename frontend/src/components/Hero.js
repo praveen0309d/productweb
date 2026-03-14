@@ -27,7 +27,7 @@ const Hero = () => {
             <div className="container">
                 <div className="hero-content" id="home">
                     <h1 className={isVisible ? "animate-fade-in delay-100" : "opacity-0"}>
-                        Cloud Infrastructure Management
+                        Reliable Cloud Infrastructure Management
                         <span>for Modern Businesses</span>
                     </h1>
                     <p className={isVisible ? "animate-fade-in delay-200" : "opacity-0"}>
